@@ -5,18 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 6</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <div id="controls">
-      <input type="number" min="1" max="100" step="1" />
-      <button type="button" data-create>Create</button>
-      <button type="button" data-destroy>Destroy</button>
+    <div class="controls" id="controls">
+      <input class="input controls-input" type="number" min="1" max="100" step="1" />
+      <button class="create-btn" type="button" data-create>Create</button>
+      <button class="destroy-btn" type="button" data-destroy>Destroy</button>
     </div>
 
-    <div id="boxes"></div>
+    <div class="controls-boxes" id="boxes">
+      <div style="width: 30px; height: 30px; background-color: blue;"></div>
+      <div style="width: 40px; height: 40px; background-color: blue;"></div>
+      <div style="width: 50px; height: 50px; background-color: blue;"></div>
+      <div style="width: 60px; height: 60px; background-color: blue;"></div>
+      <div style="width: 70px; height: 70px; background-color: blue;"></div>
+      <div style="width: 80px; height: 80px; background-color: blue;"></div>
+      <div style="width: 90px; height: 90px; background-color: blue;"></div>
+      <div style="width: 100px; height: 100px; background-color: blue;"></div>
+      <div style="width: 110px; height: 110px; background-color: blue;"></div>
+    </div>
 
     <script src="./js/task-6.js" type="module"></script>
   </body>

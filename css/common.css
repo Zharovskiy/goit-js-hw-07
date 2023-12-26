@@ -8,13 +8,17 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
-  line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
+  color: #2E2F42;
+  background-color: #fafafa;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 }
 
-h1,h2,h3 {
+h1,h2,h3,p {
   margin: 0;
 }
 
@@ -22,6 +26,23 @@ ul,li {
   list-style-type: none;
   padding: 0;
   padding: 0;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #4E75FF;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 16px;
+  font-weight: 500;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  background-color: #6C8CFF;
 }
 
 /* Task 1 */
@@ -37,16 +58,12 @@ ul,li {
 }
 
 h2 {
-  color: #2E2F42;
-  font-family: Montserrat;
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.33;
-  letter-spacing: 0.04em;
 }
 
-.item>ul>li {
+.item-name {
   border: 1px solid #808080;
   border-radius: 4px;
   width: 360px;
@@ -54,15 +71,9 @@ h2 {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
-  color: #2E2F42;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
 }
 
-.item>ul>li:not(:last-child) {
+.item-name:not(:last-child) {
   margin-bottom: 8px;
 }
 
@@ -76,14 +87,14 @@ img {
 
 .gallery {
   max-width: 1128px;
-  margin: 0 auto;
+  margin: 24px auto;
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
 }
 
 /* Task 3 */
-input[type="text"] {
+.input {
   width: 360px;
   height: 40px;
   outline: transparent;
@@ -99,16 +110,96 @@ input[type="text"] {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  margin-bottom: 16px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.input-position {
+  margin-top: 24px;
+}
+
+input:hover {
+  border: 1px solid #000;
 }
 
 h1 {
-  color: #2E2F42;
-  font-family: Montserrat;
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.33;
-  letter-spacing: 0.04em;
+  margin-top: 16px;
+}
+
+/* Task 4 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 408px;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-button {
+  max-width: 86px;
+}
+
+/* Task 5 */
+.widget {
+  width: 240px;
+  margin-top: 15px;
+}
+
+.change-color {
+  margin: 16px auto 0px 46px;
+}
+
+/* Task 6 */
+.controls-input {
+  width: 150px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  margin-top: 24px;
+  padding: 32px;
+  background-color: #F6F6FE;
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.create-btn {
+  margin-top: 0;
+  width: 120px;
+}
+
+.destroy-btn {
+  margin-top: 0;
+  width: 120px;
+  background-color: #FF4E4E;
+}
+
+.destroy-btn:hover {
+  background-color: #FF7070;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.controls-boxes {
+  margin-top: 16px;
+  padding: 32px;
+  background-color: #F6F6FE;
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
