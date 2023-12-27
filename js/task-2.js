@@ -29,16 +29,18 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
+const arrElemGallery = [];
 
-images.forEach(element => {
+images.map(element => {
   const item = document.createElement('li');
   const img = document.createElement('img');
   img.setAttribute('src', element.url);
   img.setAttribute('alt', element.alt);
-  
   item.append(img);
-  gallery.append(item);
+  arrElemGallery.push(item)
 });
+
+gallery.append(...arrElemGallery);
 
 
 
