@@ -5,53 +5,34 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
-  console.log('clickCreate');
-  destroyBoxes();
-
-// Після натискання користувачем на кнопку Create треба провалідувати значення в 
-// input, воно має бути в межах від 1 до 100 включно. Тільки якщо воно задоволяє 
-// умову, мають додаватися нові <div> елементи в DOM.
-
-// Для рендеру елементів на сторінці створи функцію createBoxes(amount), яка приймає 
-// один параметр — число, що зберігає кількість елементів для рендеру. Функція має 
-// створювати стільки <div> елементів, скільки вказано в параметрі amount і додавати 
-// їх у DOM дочірніми елементами для div#boxes.
-
-// Розміри першого <div> елемента мають бути 30px на 30px.
-// Кожен наступний елемент повинен бути ширшим і вищим від попереднього на 10px.
-// Усі елементи повинні мати випадковий колір фону. Використовуй готову функцію 
-// getRandomHexColor() для отримання випадкового кольору.
-
-  // input.reset()
+  const boxes = document.querySelector('#boxes');
+  let width = 30;
+  let height = 30;
+  const arrElemBoxes = [`<div style="width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()};"></div>`];
+  for(let i = 1; i < amount; i++) {
+    width += 10;
+    height += 10;
+    arrElemBoxes.push(`<div style="width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()};"></div>`);
+  }
+  const markup = arrElemBoxes.join('\n\n');
+  boxes.innerHTML = markup;
 };
 
 function destroyBoxes() {
   boxes.innerHTML = '';
 };
 
-const boxes = document.querySelector('#boxes');
-
-// const input = document. значення інпута
-
-const create = document.querySelector('.create-btn');
-create.addEventListener('click', (event) => {
-  createBoxes()
+const createBtn = document.querySelector('[data-create]');
+const input = document.querySelector('.js-input');
+createBtn.addEventListener('click', (event) => { 
+  if(input.value >= 1 && input.value <= 100) {
+    destroyBoxes();
+    createBoxes(input.value); 
+    input.value = ''; 
+  }
 });
 
-const destroy = document.querySelector('.destroy-btn');
-destroy.addEventListener('click', (event) => {
-  destroyBoxes()
+const destroyBtn = document.querySelector('[data-destroy]');
+destroyBtn.addEventListener('click', (event) => {
+  destroyBoxes();
 });
-
-// На що буде звертати увагу ментор при перевірці:
-// Після кліку на кнопку Create, якщо в input значення поза межами діапазону 1-100, 
-// нічого не відбувається
-// Після кліку на кнопку Create в div#boxes додається така кількість різнокольорових 
-// квадратів, яка вказана в input. Значення input очищається
-// Після повторного кліку на кнопку Create попередні квадрати повністю прибираються і 
-// замість них додаються нові у кількості, що вказана в input. Значення input 
-// очищається
-// Усі квадрати в div#boxes різнокольорові і мають фон випадкового кольору
-// Перший квадрат у div#boxes має розміри 30px на 30px, а кожен наступний на 10px 
-// вищий і ширший від попереднього
-// Після натискання на кнопку Destroy усі квадрати з div#boxes мають видалятися
