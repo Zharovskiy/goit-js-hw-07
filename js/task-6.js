@@ -14,7 +14,7 @@ function createBoxes(amount) {
     arrElemBoxes.push(`<div style="width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()};"></div>`);
   }
   const markup = arrElemBoxes.join('\n\n');
-  boxes.innerHTML = markup;
+  boxes.insertAdjacentHTML('afterbegin', markup);
 };
 
 function destroyBoxes() {
@@ -22,8 +22,9 @@ function destroyBoxes() {
 };
 
 const boxes = document.querySelector('#boxes');
-const createBtn = document.querySelector('[data-create]');
 const input = document.querySelector('.js-input');
+
+const createBtn = document.querySelector('[data-create]');
 createBtn.addEventListener('click', (event) => { 
   destroyBoxes();
   if(input.value >= 1 && input.value <= 100) {
