@@ -31,13 +31,13 @@ const images = [
 const gallery = document.querySelector('.gallery');
 const arrElemGallery = [];
 
-images.map(element => {
+images.forEach(element => {
   const item = document.createElement('li');
   const img = document.createElement('img');
   img.setAttribute('src', element.url);
   img.setAttribute('alt', element.alt);
   item.append(img);
-  arrElemGallery.push(item)
+  arrElemGallery.push(item);
 });
 
 gallery.append(...arrElemGallery);

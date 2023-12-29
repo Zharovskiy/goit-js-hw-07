@@ -5,7 +5,6 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
-  const boxes = document.querySelector('#boxes');
   let width = 30;
   let height = 30;
   const arrElemBoxes = [`<div style="width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()};"></div>`];
@@ -22,11 +21,12 @@ function destroyBoxes() {
   boxes.innerHTML = '';
 };
 
+const boxes = document.querySelector('#boxes');
 const createBtn = document.querySelector('[data-create]');
 const input = document.querySelector('.js-input');
 createBtn.addEventListener('click', (event) => { 
+  destroyBoxes();
   if(input.value >= 1 && input.value <= 100) {
-    destroyBoxes();
     createBoxes(input.value); 
     input.value = ''; 
   }
